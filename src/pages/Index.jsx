@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Tool, Star, TrendingUp } from 'lucide-react';
+import { Search, Wrench, Star, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -44,7 +44,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item) => (
               <div key={item} className="bg-gray-800 rounded-lg p-6">
-                <Tool className="text-green-400 mb-4" size={48} />
+                <Wrench className="text-green-400 mb-4" size={48} />
                 <h3 className="text-xl font-bold mb-2">AI Tool {item}</h3>
                 <p className="text-gray-400 mb-4">Brief description of the AI tool and its capabilities.</p>
                 <Button variant="outline" className="text-green-400 border-green-400 hover:bg-green-400 hover:text-white">
