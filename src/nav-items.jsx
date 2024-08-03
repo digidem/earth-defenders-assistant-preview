@@ -1,4 +1,4 @@
-import { Home, Info, Tool, Star, TrendingUp, BookOpen, Mail } from "lucide-react";
+import { Home, Info, Wrench, Star, TrendingUp, BookOpen, Mail } from "lucide-react";
 import Index from "./pages/Index.jsx";
 
 /**
@@ -20,7 +20,7 @@ export const navItems = [
   {
     title: "Tools",
     to: "/tools",
-    icon: <Tool className="h-4 w-4" />,
+    icon: <Wrench className="h-4 w-4" />,
     page: <div>Tools Page</div>,
   },
   {
