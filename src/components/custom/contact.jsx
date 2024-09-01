@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 
-const ContactForm = () => {
+const ContactForm = ({ theme }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -43,13 +43,13 @@ const ContactForm = () => {
     return (
         <motion.form
             onSubmit={handleSubmit}
-            className="space-y-4"
+            className={`space-y-4 ${theme}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
             <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium">Name</label>
                 <motion.input
                     whileFocus={{ scale: 1.02 }}
                     type="text"
@@ -62,7 +62,7 @@ const ContactForm = () => {
                 />
             </div>
             <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium">Email</label>
                 <motion.input
                     whileFocus={{ scale: 1.02 }}
                     type="email"
@@ -75,7 +75,7 @@ const ContactForm = () => {
                 />
             </div>
             <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium">Message</label>
                 <motion.textarea
                     whileFocus={{ scale: 1.02 }}
                     id="message"
