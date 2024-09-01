@@ -10,7 +10,7 @@ const Button = ({ text, number }) => {
     return (
         <div className="StyledWrapper">
             <button type="button" className="button2" onClick={handleButtonClick}>
-                {buttonText}
+                {text}
                 <svg
                     title="whatsapp-button"
                     viewBox="0 0 48 48"
