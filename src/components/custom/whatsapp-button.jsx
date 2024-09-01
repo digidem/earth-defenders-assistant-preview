@@ -1,15 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const WhatsAppButton = ({ text }) => {
+const WhatsAppButton = ({ text, theme }) => {
   const handleClick = () => {
     const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || 'your-whatsapp-number';
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
   };
 
+  const buttonColors = {
+    default: "bg-green-500 hover:bg-green-600",
+    earthDefenders: "bg-[#F67D31] hover:bg-[#E56D21]",
+  };
+
   return (
     <motion.button
-      className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300 relative overflow-hidden"
+      className={`inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white ${buttonColors[theme]} rounded-full transition-colors duration-300 relative overflow-hidden`}
       onClick={handleClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
