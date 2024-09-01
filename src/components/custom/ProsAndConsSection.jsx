@@ -6,7 +6,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
   return (
     <section className={`pt-24 pb-72 ${themeColors[theme].background} relative overflow-hidden`}>
       <div className="container mx-auto relative z-10">
-        <h2 className={`text-3xl font-bold mb-12 text-center ${themeColors[theme].textPrimary}`}>Pros and Cons of Using WhatsApp</h2>
+        <h2 className={`text-3xl font-bold mb-24 text-center ${themeColors[theme].textPrimary}`}>Pros and Cons of Using WhatsApp</h2>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

@@ -11,9 +11,9 @@ const HowItWorksSection = ({ theme, themeColors }) => {
   ];
 
   return (
-    <section id="how-it-works" className={`py-32 ${themeColors[theme].accent} relative transition-colors duration-500`}>
+    <section id="how-it-works" className={`pt-32 pb-64 ${themeColors[theme].accent} relative transition-colors duration-500`}>
       <div className="container mx-auto">
-        <h2 className={`text-3xl font-bold mb-12 text-center ${themeColors[theme].textDark}`}>How It Works</h2>
+        <h2 className={`text-3xl font-bold mb-20 text-center ${themeColors[theme].textDark}`}>How It Works</h2>
         <div className={`flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 ${themeColors[theme].textDark}`}>
           {steps.map((step, index) => (
             <React.Fragment key={index}>
@@ -32,7 +32,7 @@ const HowItWorksSection = ({ theme, themeColors }) => {
                 <motion.div
                   initial={{ opacity: 0, rotate: 0 }}
                   animate={{ opacity: 1, rotate: 360 }}
-                  transition={{ duration: 2, delay: index * 0.2, repeat: Infinity, repeatType: "reverse" }}
+                  transition={{ duration: 2, delay: index * 0.2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
                   className="hidden md:block mx-4"
                 >
                   <ArrowRight className={`${themeColors[theme].textPrimary} w-8 h-8`} />
