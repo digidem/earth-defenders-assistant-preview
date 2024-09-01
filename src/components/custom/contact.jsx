@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -40,43 +41,62 @@ const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="contact-form">
+        <motion.form
+            onSubmit={handleSubmit}
+            className="space-y-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
             <div>
-                <label htmlFor="name">Name:</label>
-                <input
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <motion.input
+                    whileFocus={{ scale: 1.02 }}
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
                 />
             </div>
             <div>
-                <label htmlFor="email">Email:</label>
-                <input
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <motion.input
+                    whileFocus={{ scale: 1.02 }}
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
                 />
             </div>
             <div>
-                <label htmlFor="message">Message:</label>
-                <textarea
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <motion.textarea
+                    whileFocus={{ scale: 1.02 }}
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    rows="4"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
                 />
             </div>
-            <button type="submit">Send</button>
-        </form>
+            <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            >
+                Send
+            </motion.button>
+        </motion.form>
     );
 };
 
 export default ContactForm;
-
