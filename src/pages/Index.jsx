@@ -31,9 +31,9 @@ const Index = () => {
 
   const themeColors = {
     default: {
-      primary: 'bg-green-600',
-      secondary: 'bg-green-500',
-      accent: 'bg-green-100',
+      primary: 'bg-gray-800',
+      secondary: 'bg-gray-700',
+      accent: 'bg-gray-200',
       text: 'text-gray-800',
     },
     earthDefenders: {
@@ -118,17 +118,99 @@ const Index = () => {
 
         {/* Features Section */}
         <section id="features" className="py-16 bg-white relative">
-          {/* ... (keep existing content) ... */}
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <MessageCircle className="w-12 h-12 mx-auto mb-4 text-gray-600" />
+                <h3 className="text-xl font-semibold mb-2">Easy Communication</h3>
+                <p>Connect with Earth Defenders tools through familiar WhatsApp interface.</p>
+              </div>
+              <div className="text-center">
+                <Shield className="w-12 h-12 mx-auto mb-4 text-gray-600" />
+                <h3 className="text-xl font-semibold mb-2">Data Protection</h3>
+                <p>Ensure the safety and privacy of sensitive environmental data.</p>
+              </div>
+              <div className="text-center">
+                <Globe className="w-12 h-12 mx-auto mb-4 text-gray-600" />
+                <h3 className="text-xl font-semibold mb-2">Global Accessibility</h3>
+                <p>Access tools and resources from anywhere in the world.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* How It Works Section */}
         <section id="how-it-works" className={`py-16 ${themeColors[theme].accent} relative transition-colors duration-500`}>
-          {/* ... (keep existing content) ... */}
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center text-white">How It Works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-3xl font-bold mb-4 text-gray-800">1</div>
+                <h3 className="text-xl font-semibold mb-2">Connect via WhatsApp</h3>
+                <p>Start a conversation with our Earth Defender Assistant bot on WhatsApp.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-3xl font-bold mb-4 text-gray-800">2</div>
+                <h3 className="text-xl font-semibold mb-2">Choose Your Tool</h3>
+                <p>Select from Mapeo, Terrastories, or other Earth Defenders Toolkit resources.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-3xl font-bold mb-4 text-gray-800">3</div>
+                <h3 className="text-xl font-semibold mb-2">Collaborate and Protect</h3>
+                <p>Use the tools to document, map, and protect your environment and community.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Pros and Cons Section */}
         <section className="pt-16 pb-32 bg-white relative overflow-hidden">
-          {/* ... (keep existing content) ... */}
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center">Pros and Cons</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 flex items-center">
+                  <CheckCircle className="w-6 h-6 mr-2 text-green-500" />
+                  Pros
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 mr-2 text-green-500 mt-1" />
+                    <span>Easy access through WhatsApp</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 mr-2 text-green-500 mt-1" />
+                    <span>No need for additional app installations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 mr-2 text-green-500 mt-1" />
+                    <span>Works in areas with limited internet connectivity</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 flex items-center">
+                  <AlertTriangle className="w-6 h-6 mr-2 text-yellow-500" />
+                  Cons
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <AlertTriangle className="w-5 h-5 mr-2 text-yellow-500 mt-1" />
+                    <span>Requires a WhatsApp account</span>
+                  </li>
+                  <li className="flex items-start">
+                    <AlertTriangle className="w-5 h-5 mr-2 text-yellow-500 mt-1" />
+                    <span>Limited by WhatsApp's features and restrictions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <AlertTriangle className="w-5 h-5 mr-2 text-yellow-500 mt-1" />
+                    <span>May have reduced functionality compared to full apps</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Call to Action */}
@@ -179,7 +261,7 @@ const Index = () => {
         <footer className={`${themeColors[theme].primary} text-white py-8 transition-colors duration-500`}>
           <div className="container mx-auto text-center">
             <div className={`${themeColors[theme].secondary} text-white py-2 px-4 inline-block rounded transition-colors duration-500`}>
-              <a href="https://awana.digital" className="hover:text-green-300">Awana Digital</a>
+              <a href="https://awana.digital" className="hover:text-gray-300">Awana Digital</a>
             </div>
             <p className="mt-4">&copy; {new Date().getFullYear()} Earth Defender Assistant</p>
           </div>
