@@ -1,8 +1,22 @@
 import React from 'react';
 import { MessageCircle, Shield, Globe, Leaf, AlertTriangle, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
+import { LoaderTwo as AnimatedLogo } from '@/components/custom/animated-map'
+import WhatsAppButton from '@/components/custom/whatsapp-button'
+import Contact from '@/components/custom/contact'
 const Index = () => {
+  const { t, i18n } = useTranslation();
+  const languages = [
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'pt', name: 'Português' }
+  ];
+
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
+
   return (
     <div className="min-h-screen bg-green-50 text-gray-800">
       {/* Header */}
@@ -10,28 +24,36 @@ const Index = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-2xl font-bold text-white">Earth Defender Assistant</div>
           <nav>
-            <ul className="flex space-x-4">
-              {['Home', 'Features', 'How It Works', 'About', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white hover:text-green-200">{item}</a>
-                </li>
+            <select
+              onChange={(e) => changeLanguage(e.target.value)}
+              className="cursor-pointer bg-green-600 text-white p-2 rounded"
+              value={i18n.language}
+            >
+              {languages.map((item) => (
+                <option key={item.code} value={item.code}>
+                  {item.name}
+                </option>
               ))}
-            </ul>
+            </select>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="py-20 bg-gradient-to-r from-green-500 to-green-600">
+      <section id="home" className="py-20">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4 text-white">Empower Earth Defenders with WhatsApp</h1>
-          <p className="text-xl mb-8 text-green-100">Connect with Mapeo, Terrastories, and Earth Defenders Toolkit through a simple chat interface</p>
-          <Button
+          <div className="flex justify-center pb-8">
+            <AnimatedLogo />
+          </div>
+          <h1 className="text-5xl font-bold mb-4 text-white">Empower Earth Defenders through WhatsApp</h1>
+          <p className="pb-4 text-xl mb-8 text-green-100">Connect with Mapeo, Terrastories, and Earth Defenders Toolkit through a simple chat interface</p>
+          <WhatsAppButton text="Start Chatting Now" />
+          {/* <Button
             className="bg-white text-green-600 hover:bg-green-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300"
             onClick={() => window.open('https://wa.me/your-whatsapp-number', '_blank')}
           >
             Start Chatting Now
-          </Button>
+          </Button> */}
         </div>
       </section>
 
@@ -108,47 +130,28 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-16 bg-green-600 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Defend the Earth?</h2>
-          <p className="text-xl mb-8">Join our WhatsApp group and start using Earth Defender Assistant today!</p>
-          <Button
-            className="bg-white text-green-600 hover:bg-green-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300"
-            onClick={() => window.open('https://wa.me/your-whatsapp-number', '_blank')}
-          >
-            Join Now
-          </Button>
+          <h2 className="text-3xl font-bold mb-4">Your Ultimate Ally in Land Protection</h2>
+          <p className="text-xl mb-8">Invite it to your WhatsApp group and start using Earth Defender Assistant today!</p>
+          <WhatsAppButton text="Try Now" />
         </div>
       </section>
-
+      <section>
+        <Contact />
+      </section>
       {/* Footer */}
       <footer className="bg-green-800 text-white py-8">
-        <div className="container mx-auto flex flex-wrap justify-between">
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">Earth Defender Assistant</h3>
-            <p>Empowering communities to protect their environment through accessible technology.</p>
+        <div className="container mx-auto text-center">
+          <h3 className="text-xl font-bold mb-4">Earth Defender Assistant</h3>
+          <p>Empowering communities to protect their environment through accessible technology.</p>
+          <div className="mt-4">
+            <a href="https://awana.digital" className="hover:text-green-300 mx-2">awana.digital</a>
+            <a href="https://mapeo.app" className="hover:text-green-300 mx-2">mapeo.app</a>
+            <a href="https://terrastories.app" className="hover:text-green-300 mx-2">terrastories.app</a>
+            <a href="https://earthdefenderstoolkit.com" className="hover:text-green-300 mx-2">earthdefenderstoolkit.com</a>
           </div>
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {['Privacy Policy', 'Terms of Service', 'FAQ', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-green-300">{item}</a>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-8 text-sm">
+            <p>&copy; 2024 Earth Defender Assistant. All rights reserved. | FOSS and free to use</p>
           </div>
-          <div className="w-full md:w-1/3">
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              {['Twitter', 'Facebook', 'Instagram', 'GitHub'].map((item) => (
-                <a key={item} href="#" className="hover:text-green-300">
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 text-center text-sm">
-          <p>&copy; 2024 Earth Defender Assistant. All rights reserved. | FOSS and free to use</p>
         </div>
       </footer>
     </div>
