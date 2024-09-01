@@ -1,131 +1,154 @@
 import React from 'react';
-import { Search, Wrench, Star, TrendingUp } from 'lucide-react';
+import { MessageCircle, Shield, Globe, Leaf, AlertTriangle, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-green-50 text-gray-800">
       {/* Header */}
-      <header className="bg-gray-900 py-4">
+      <header className="bg-green-600 py-4">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold text-green-400">AI Tool Tester</div>
+          <div className="text-2xl font-bold text-white">Earth Defender Assistant</div>
           <nav>
             <ul className="flex space-x-4">
-              {['Home', 'About', 'Tools', 'Reviews', 'Trends', 'Blog', 'Contact'].map((item) => (
+              {['Home', 'Features', 'How It Works', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-300 hover:text-green-400">{item}</a>
+                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white hover:text-green-200">{item}</a>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="relative">
-            <Input type="text" placeholder="Search AI Tools" className="pl-10 pr-4 py-2 rounded-full bg-gray-800 text-white" />
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 via-green-900 to-blue-900">
+      <section id="home" className="py-20 bg-gradient-to-r from-green-500 to-green-600">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Your Ultimate AI Tools Resource</h1>
-          <p className="text-xl mb-8">Testing, Reviewing, and Trending AI Innovations</p>
-          <Button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full">
-            Explore Tools
+          <h1 className="text-5xl font-bold mb-4 text-white">Empower Earth Defenders with WhatsApp</h1>
+          <p className="text-xl mb-8 text-green-100">Connect with Mapeo, Terrastories, and Earth Defenders Toolkit through a simple chat interface</p>
+          <Button
+            className="bg-white text-green-600 hover:bg-green-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300"
+            onClick={() => window.open('https://wa.me/your-whatsapp-number', '_blank')}
+          >
+            Start Chatting Now
           </Button>
         </div>
       </section>
 
-      {/* Featured Sections */}
-      <section className="py-16 bg-gray-900">
+      {/* Features Section */}
+      <section id="features" className="py-16 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Featured AI Tools</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-gray-800 rounded-lg p-6">
-                <Wrench className="text-green-400 mb-4" size={48} />
-                <h3 className="text-xl font-bold mb-2">AI Tool {item}</h3>
-                <p className="text-gray-400 mb-4">Brief description of the AI tool and its capabilities.</p>
-                <Button variant="outline" className="text-green-400 border-green-400 hover:bg-green-400 hover:text-white">
-                  Add to Toolbox
-                </Button>
+            {[
+              { icon: <Globe className="text-green-500 mb-4" size={48} />, title: "Mapeo Integration", description: "Seamlessly create and manage geo-observations through WhatsApp" },
+              { icon: <Leaf className="text-green-500 mb-4" size={48} />, title: "Terrastories Connection", description: "Share and preserve your community's stories with ease" },
+              { icon: <Shield className="text-green-500 mb-4" size={48} />, title: "Earth Defenders Toolkit", description: "Access a wealth of resources and tools for environmental protection" }
+            ].map((feature, index) => (
+              <div key={index} className="bg-green-50 rounded-lg p-6 text-center">
+                {feature.icon}
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-800">
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-16 bg-green-100">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Expert Reviews</h2>
-          <div className="flex space-x-8 overflow-x-auto pb-4">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-gray-700 rounded-lg p-6 min-w-[300px]">
-                <div className="flex items-center mb-4">
-                  <Star className="text-yellow-400 mr-2" />
-                  <span className="text-yellow-400 font-bold">4.5/5</span>
+          <h2 className="text-3xl font-bold mb-12 text-center">How It Works</h2>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
+            {[
+              { step: 1, text: "Join the WhatsApp group" },
+              { step: 2, text: "Send a message to the bot" },
+              { step: 3, text: "Bot processes your request" },
+              { step: 4, text: "Receive information or confirm actions" }
+            ].map((step, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                  {step.step}
                 </div>
-                <h3 className="text-xl font-bold mb-2">AI Tool Review {item}</h3>
-                <p className="text-gray-400 mb-4">Snippet of the review highlighting key points...</p>
-                <Button variant="link" className="text-blue-400 hover:text-blue-300 p-0">
-                  Read Full Review
-                </Button>
+                <p className="text-center">{step.text}</p>
+                {index < 3 && <div className="hidden md:block text-green-500 text-4xl mx-4">→</div>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-900">
+      {/* Pros and Cons Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Trending Now</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-gray-800 rounded-lg p-6">
-                <TrendingUp className="text-blue-400 mb-4" size={32} />
-                <h3 className="text-xl font-bold mb-2">AI Trend Article {item}</h3>
-                <p className="text-gray-400 mb-4">Brief snippet of the trending AI topic or news...</p>
-                <Button variant="link" className="text-blue-400 hover:text-blue-300 p-0">
-                  Read More
-                </Button>
-              </div>
-            ))}
+          <h2 className="text-3xl font-bold mb-12 text-center">Pros and Cons of Using WhatsApp</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-green-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 flex items-center"><CheckCircle className="text-green-500 mr-2" /> Advantages</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Widely accessible and familiar interface</li>
+                <li>Works on low-bandwidth connections</li>
+                <li>Easy to use for non-technical users</li>
+                <li>Supports multimedia content sharing</li>
+              </ul>
+            </div>
+            <div className="bg-red-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 flex items-center"><AlertTriangle className="text-red-500 mr-2" /> Considerations</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Owned by Meta (privacy concerns)</li>
+                <li>Requires phone number for registration</li>
+                <li>Limited by WhatsApp's API restrictions</li>
+                <li>May not be ideal for large-scale data management</li>
+              </ul>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-green-600 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Defend the Earth?</h2>
+          <p className="text-xl mb-8">Join our WhatsApp group and start using Earth Defender Assistant today!</p>
+          <Button
+            className="bg-white text-green-600 hover:bg-green-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300"
+            onClick={() => window.open('https://wa.me/your-whatsapp-number', '_blank')}
+          >
+            Join Now
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-8">
+      <footer className="bg-green-800 text-white py-8">
         <div className="container mx-auto flex flex-wrap justify-between">
+          <div className="w-full md:w-1/3 mb-8 md:mb-0">
+            <h3 className="text-xl font-bold mb-4">Earth Defender Assistant</h3>
+            <p>Empowering communities to protect their environment through accessible technology.</p>
+          </div>
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Privacy Policy', 'Terms of Service', 'Support'].map((item) => (
+              {['Privacy Policy', 'Terms of Service', 'FAQ', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-green-400">{item}</a>
+                  <a href="#" className="hover:text-green-300">{item}</a>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+          <div className="w-full md:w-1/3">
+            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              {['LinkedIn', 'Twitter', 'Facebook', 'Instagram'].map((item) => (
-                <a key={item} href="#" className="text-gray-400 hover:text-green-400">
+              {['Twitter', 'Facebook', 'Instagram', 'GitHub'].map((item) => (
+                <a key={item} href="#" className="hover:text-green-300">
                   {item}
                 </a>
               ))}
             </div>
           </div>
-          <div className="w-full md:w-1/3">
-            <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Get the Latest AI News</p>
-            <div className="flex">
-              <Input type="email" placeholder="Your email" className="rounded-l-full" />
-              <Button className="bg-green-500 hover:bg-green-600 rounded-r-full">Subscribe</Button>
-            </div>
-          </div>
+        </div>
+        <div className="mt-8 text-center text-sm">
+          <p>&copy; 2024 Earth Defender Assistant. All rights reserved. | FOSS and free to use</p>
         </div>
       </footer>
     </div>
