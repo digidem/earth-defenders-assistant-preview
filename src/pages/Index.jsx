@@ -77,7 +77,7 @@ const Index = () => {
           </motion.div>
         </div>
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16" style={{ transform: 'scaleY(-1)' }}>
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-current text-white"></path>
           </svg>
         </div>
@@ -87,7 +87,7 @@ const Index = () => {
       <section id="features" className="py-16 bg-white relative">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
             {[
               { icon: <Globe className="text-green-500 mb-4" size={48} />, title: "Mapeo Integration", description: "Seamlessly create and manage geo-observations through WhatsApp" },
               { icon: <Leaf className="text-green-500 mb-4" size={48} />, title: "Terrastories Connection", description: "Share and preserve your community's stories with ease" },
@@ -108,7 +108,7 @@ const Index = () => {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16" style={{ transform: 'scaleY(-1)' }}>
             <path d="M1200 120L0 16.48V0h1200v120z" className="fill-current text-green-100"></path>
           </svg>
         </div>
@@ -118,7 +118,7 @@ const Index = () => {
       <section id="how-it-works" className="py-16 bg-green-100 relative">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">How It Works</h2>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
+          <div className="pb-32 flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
             {[
               { step: 1, text: "Join the WhatsApp group" },
               { step: 2, text: "Send a message to the bot" },
@@ -149,16 +149,17 @@ const Index = () => {
       </section>
 
       {/* Pros and Cons Section */}
-      <section className="py-16 bg-white relative">
-        <div className="container mx-auto">
+      <section className="pt-16 pb-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center">Pros and Cons of Using WhatsApp</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-green-50 rounded-lg p-6 shadow-lg"
+              className="bg-green-50 rounded-full p-16 shadow-lg relative"
             >
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-green-200 rounded-full opacity-50 animate-pulse"></div>
               <h3 className="text-xl font-bold mb-4 flex items-center"><CheckCircle className="text-green-500 mr-2" /> Advantages</h3>
               <ul className="list-disc list-inside space-y-2">
                 <li>Widely accessible and familiar interface</li>
@@ -171,8 +172,9 @@ const Index = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-red-50 rounded-lg p-6 shadow-lg"
+              className="bg-red-50 rounded-full p-16 shadow-lg relative"
             >
+              <div className="absolute -top-12 -right-2 w-16 h-16 bg-red-200 rounded-full opacity-50 animate-pulse"></div>
               <h3 className="text-xl font-bold mb-4 flex items-center"><AlertTriangle className="text-red-500 mr-2" /> Considerations</h3>
               <ul className="list-disc list-inside space-y-2">
                 <li>Owned by Meta (privacy concerns)</li>
@@ -182,6 +184,10 @@ const Index = () => {
               </ul>
             </motion.div>
           </div>
+        </div>
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="w-96 h-96 bg-green-100 rounded-full opacity-30 animate-spin-slow"></div>
+          <div className="w-72 h-72 bg-red-100 rounded-full opacity-30 animate-spin-slow-reverse"></div>
         </div>
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
@@ -237,8 +243,33 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-green-800 text-white py-8">
         <div className="container mx-auto text-center">
-          <a href="https://awana.digital" className="hover:text-green-300">awana.digital</a>
+          <div className="bg-[#4C1130] text-white py-2 px-4 inline-block rounded">
+            <a href="https://awana.digital" className="hover:text-green-300">Awana Digital</a>
+          </div>
           <p className="mt-4">&copy; {new Date().getFullYear()} Earth Defender Assistant</p>
+          <div className="mt-4 space-x-2 flex justify-center">
+            <motion.a
+              href="https://mapeo.app"
+              className="bg-blue-800 text-white py-2 px-4 rounded-full hover:bg-blue-900 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              CoMapeo
+            </motion.a>
+            <motion.a
+              href="https://terrastories.app"
+              className="bg-orange-600 text-white py-2 px-4 rounded-full hover:bg-orange-700 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              Terrastories
+            </motion.a>
+            <motion.a
+              href="https://earthdefenderstoolkit.com"
+              className="bg-[#7A7E56] text-white py-2 px-4 rounded-full hover:bg-[#6B6E4A] transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              Earth Defenders Toolkit
+            </motion.a>
+          </div>
         </div>
       </footer>
     </div>
