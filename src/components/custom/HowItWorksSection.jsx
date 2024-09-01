@@ -11,7 +11,7 @@ const HowItWorksSection = ({ theme, themeColors }) => {
   ];
 
   return (
-    <section id="how-it-works" className={`pt-32 pb-64 ${themeColors[theme].accent} relative transition-colors duration-500`}>
+    <section id="how-it-works" className={`pt-32 pb-64 ${themeColors[theme].accent} relative transition-colors duration-500`} style={{ backgroundImage: theme === 'default' ? 'linear-gradient(to right, rgba(34, 197, 94, 0.65), rgba(22, 163, 74, 0.65)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')' : 'linear-gradient(to right, rgba(122, 126, 86, 0.65), rgba(246, 125, 49, 0.65)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')', backgroundSize: 'contain' }}>
       <div className="container mx-auto">
         <h2 className={`text-3xl font-bold mb-20 text-center ${themeColors[theme].textDark}`}>How It Works</h2>
         <div className={`flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 ${themeColors[theme].textDark}`}>
