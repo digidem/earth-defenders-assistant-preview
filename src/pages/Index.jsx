@@ -52,7 +52,10 @@ const Index = () => {
       accent: 'bg-[#7A7E56]',
       textAccent: 'text-[#7A7E56]',
       text: 'text-[#3C4F60]',
-      textDark: 'text-white',
+      textDark: 'text-[#F5F3E5]',
+      button: 'bg-[#F67D31] hover:bg-[#E56D21] text-[#F5F3E5]',
+      card: 'bg-[#F5F3E5] text-[#3C4F60] shadow-[#7A7E56]',
+      icon: 'text-[#F67D31]',
     },
   };
 
@@ -64,17 +67,15 @@ const Index = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className={`min-h-screen ${themeColors[theme].text}`}
+        className={`min-h-screen ${themeColors[theme].background} ${themeColors[theme].text}`}
       >
-        {/* Header */}
-        <Header theme={theme} themeColors={themeColors} changeLanguage={changeLanguage} languages={[{ code: 'en', name: 'English' }, { code: 'es', name: 'Spanish' }]} />
+        <Header theme={theme} themeColors={themeColors} changeLanguage={changeLanguage} languages={languages} />
         <HeroSection theme={theme} themeColors={themeColors} />
         <FeaturesSection theme={theme} themeColors={themeColors} />
         <HowItWorksSection theme={theme} themeColors={themeColors} />
         <ProsAndConsSection theme={theme} themeColors={themeColors} />
         <CallToAction theme={theme} themeColors={themeColors} />
         <ContactSection theme={theme} themeColors={themeColors} />
-        {/* Footer */}
         <Footer theme={theme} themeColors={themeColors} />
       </motion.div>
     </AnimatePresence>

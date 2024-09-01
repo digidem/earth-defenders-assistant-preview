@@ -20,18 +20,18 @@ const HowItWorksSection = ({ theme, themeColors }) => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="flex flex-col items-center"
             >
-              <div className="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+              <div className={`${themeColors[theme].primary} text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4`}>
                 {step.step}
               </div>
               <p className="text-center">{step.text}</p>
-              {index < 3 && <div className="hidden md:block text-green-500 text-4xl mx-4">→</div>}
+              {index < 3 && <div className={`hidden md:block ${themeColors[theme].textPrimary} text-4xl mx-4`}>→</div>}
             </motion.div>
           ))}
         </div>
       </div>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden transform rotate-180">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-          <path d="M1200 120L0 16.48V0h1200v120z" className="fill-current text-[#F5F3E5]"></path>
+          <path d="M1200 120L0 16.48V0h1200v120z" className={`fill-current ${themeColors[theme].background}`}></path>
         </svg>
       </div>
     </section>
