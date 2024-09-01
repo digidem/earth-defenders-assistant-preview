@@ -4,7 +4,7 @@ import { CheckCircle, AlertTriangle } from 'lucide-react';
 
 const ProsAndConsSection = ({ theme, themeColors }) => {
   return (
-    <section className={`pt-16 pb-32 ${themeColors[theme].background} relative overflow-hidden`}>
+    <section className={`pt-24 pb-72 ${themeColors[theme].background} relative overflow-hidden`}>
       <div className="container mx-auto relative z-10">
         <h2 className={`text-3xl font-bold mb-12 text-center ${themeColors[theme].textPrimary}`}>Pros and Cons of Using WhatsApp</h2>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
@@ -12,7 +12,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className={`${themeColors[theme].card} rounded-full p-16 shadow-lg relative`}
+            className={`bg-green-100 rounded-full p-16 shadow-lg relative`}
           >
             <div className={`absolute -top-8 -left-8 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50 animate-pulse`}></div>
             <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><CheckCircle className="mr-2" /> Advantages</h3>
@@ -27,7 +27,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className={`${themeColors[theme].card} rounded-full p-16 shadow-lg relative`}
+            className={`bg-red-100 rounded-full p-16 shadow-lg relative`}
           >
             <div className={`absolute -top-12 -right-2 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50 animate-pulse`}></div>
             <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><AlertTriangle className="mr-2" /> Considerations</h3>

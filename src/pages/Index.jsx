@@ -40,6 +40,7 @@ const Index = () => {
       secondary: 'bg-gray-700',
       background: 'bg-green-50',
       accent: 'bg-green-100',
+      textBackground: 'text-green-50',
       textAccent: 'text-green-100',
       text: 'text-gray-800',
       textDark: 'text-gray-800'
@@ -53,8 +54,9 @@ const Index = () => {
       textAccent: 'text-[#7A7E56]',
       text: 'text-[#3C4F60]',
       textDark: 'text-[#F5F3E5]',
+      textBackground: 'text-[#F5F3E5]',
       button: 'bg-[#F67D31] hover:bg-[#E56D21] text-[#F5F3E5]',
-      card: 'bg-[#F5F3E5] text-[#3C4F60] shadow-[#7A7E56]',
+      card: 'bg-[#F7F5E8] text-[#3E5163] shadow-[#7C8060]',
       icon: 'text-[#F67D31]',
     },
   };
