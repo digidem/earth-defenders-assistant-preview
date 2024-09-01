@@ -1,0 +1,51 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { LoaderTwo as AnimatedLogo } from '@/components/custom/animated-map';
+import WhatsAppButton from '@/components/custom/whatsapp-button';
+
+const HeroSection = ({ theme, themeColors }) => {
+  return (
+    <section id="home" className={`py-20 relative overflow-hidden ${themeColors[theme].secondary} ${themeColors[theme].text} transition-colors duration-500`} style={{ backgroundImage: theme === 'default' ? 'linear-gradient(to right, rgba(34, 197, 94, 0.55), rgba(22, 163, 74, 0.55)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')' : 'linear-gradient(to right, rgba(122, 126, 86, 0.55), rgba(122, 126, 86, 0.55)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')', backgroundSize: 'contain' }}>
+      <div className="container mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center pb-8"
+        >
+          <AnimatedLogo />
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl font-bold mb-4 text-white"
+        >
+          Empower Earth Defenders through WhatsApp
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="pb-4 text-xl mb-8 text-white"
+        >
+          Connect with Mapeo, Terrastories, and Earth Defenders Toolkit through a simple chat interface
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <WhatsAppButton text="Start Chatting Now" theme={theme} />
+        </motion.div>
+      </div>
+      <div className="absolute text-white -bottom-0.5 left-0 w-full overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-20" style={{ transform: 'scaleY(-1)' }}>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-current text-white border-white"></path>
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
