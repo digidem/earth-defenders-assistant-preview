@@ -16,8 +16,8 @@ This project aims to create a user-friendly interface where users can:
 To set up the development environment, ensure you have Node.js and npm installed. Follow these steps:
 
 ```sh
-git clone https://github.com/luandro/earth-defender-assistant-landingpage
-cd earth-defender-assistant-landingpage
+git clone https://github.com/digidem/earth-defenders-assistant-preview
+cd earth-defenders-assistant-preview
 npm install
 
 # This will run a dev server with auto reloading and an instant preview.
