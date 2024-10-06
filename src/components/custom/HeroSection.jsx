@@ -22,7 +22,7 @@ const HeroSection = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl font-bold mb-4 text-white"
         >
-          Empower Earth Defenders through WhatsApp
+          Empower Indigenous Communities with AI
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ const HeroSection = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="pb-4 text-xl mb-8 text-white"
         >
-          Connect with Mapeo, Terrastories, and Earth Defenders Toolkit through a simple chat interface
+          Voice-enabled platform integrating Mapeo, Terrastories, and Earth Defenders Toolkit
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

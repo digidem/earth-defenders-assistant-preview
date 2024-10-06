@@ -9,7 +9,6 @@ const Header = ({ theme, themeColors, changeLanguage, languages }) => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-4 md:mb-0">
           <h1 className="text-2xl font-bold text-white">Earth Defenders Assistant</h1>
-          <p className="text-sm text-white opacity-80">Voice-Enabled AI for Indigenous Empowerment</p>
         </div>
         <nav>
           <select

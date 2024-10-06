@@ -22,6 +22,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
               <li>Train AI models for language preservation</li>
               <li>Develop robust project management tools</li>
               <li>Support sustainable territory defense and cultural preservation</li>
+              <li>Integrate with WhatsApp for easy access and communication</li>
             </ul>
           </motion.div>
           <motion.div
@@ -38,6 +39,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
               <li>Increased accessibility to technology</li>
               <li>Data sovereignty for communities</li>
               <li>Effective project management capabilities</li>
+              <li>Simplified communication through WhatsApp integration</li>
             </ul>
           </motion.div>
         </div>
