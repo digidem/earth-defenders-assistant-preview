@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-scroll';
 import { Play } from 'lucide-react';
 
-const HeroSection = ({ theme, themeColors }) => {
+const HeroSection = ({ theme, themeColors, t }) => {
   return (
     <section id="home" className={`py-32 relative overflow-hidden ${themeColors[theme].secondary} ${themeColors[theme].textDark} transition-colors duration-500`} style={{ backgroundImage: theme === 'default' ? 'linear-gradient(to right, rgba(34, 197, 94, 0.55), rgba(22, 163, 74, 0.55)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')' : 'linear-gradient(to right, rgba(122, 126, 86, 0.55), rgba(246, 125, 49, 0.55)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')', backgroundSize: 'contain' }}>
       <div className="container mx-auto text-center relative z-10">
@@ -23,7 +23,7 @@ const HeroSection = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl font-bold mb-4 text-white"
         >
-          Empower Indigenous Communities with AI
+          {t('heroTitle')}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const HeroSection = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="pb-4 text-xl mb-8 text-white max-w-3xl mx-auto"
         >
-          Harnessing offline-first technology to preserve languages, protect territories, and ensure data sovereignty for communities on the front lines of climate justice.
+          {t('heroDescription')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ const HeroSection = ({ theme, themeColors }) => {
               className={`${themeColors[theme].button} hover:brightness-110 transition-all duration-300 flex items-center gap-2`}
             >
               <Play size={20} />
-              Listen to Podcast
+              {t('listenToPodcast')}
             </Button>
           </Link>
         </motion.div>

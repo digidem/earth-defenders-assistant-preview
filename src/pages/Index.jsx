@@ -71,13 +71,13 @@ const Index = () => {
         className={`min-h-screen ${themeColors[theme].background} ${themeColors[theme].text}`}
       >
         <Header theme={theme} themeColors={themeColors} changeLanguage={changeLanguage} languages={languages} />
-        <HeroSection theme={theme} themeColors={themeColors} />
-        <AboutSection theme={theme} themeColors={themeColors} />
-        <HowItWorksSection theme={theme} themeColors={themeColors} />
-        <ProsAndConsSection theme={theme} themeColors={themeColors} />
-        <CallToAction theme={theme} themeColors={themeColors} />
-        <ContactSection theme={theme} themeColors={themeColors} />
-        <Footer theme={theme} themeColors={themeColors} />
+        <HeroSection theme={theme} themeColors={themeColors} t={t} />
+        <AboutSection theme={theme} themeColors={themeColors} t={t} />
+        <HowItWorksSection theme={theme} themeColors={themeColors} t={t} />
+        <ProsAndConsSection theme={theme} themeColors={themeColors} t={t} />
+        <CallToAction theme={theme} themeColors={themeColors} t={t} />
+        <ContactSection theme={theme} themeColors={themeColors} t={t} />
+        <Footer theme={theme} themeColors={themeColors} t={t} />
       </motion.div>
     </AnimatePresence>
   );
