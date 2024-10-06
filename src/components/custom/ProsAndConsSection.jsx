@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Target } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ProsAndConsSection = ({ theme, themeColors }) => {
+  const { t } = useTranslation();
+
   const floatingAnimation = {
     y: ['-10px', '10px'],
     transition: {
@@ -15,10 +18,28 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
     },
   };
 
+  const objectives = [
+    t("enhanceAccessibility"),
+    t("implementOffline"),
+    t("trainAI"),
+    t("developTools"),
+    t("supportSustainable"),
+    t("integrateWhatsApp")
+  ];
+
+  const outcomes = [
+    t("empoweredCommunities"),
+    t("languageCulturalPreservation"),
+    t("increasedAccessibility"),
+    t("dataSovereignty"),
+    t("effectiveProjectManagement"),
+    t("simplifiedCommunication")
+  ];
+
   return (
     <section className={`pt-24 pb-72 ${themeColors[theme].background} relative overflow-hidden`}>
       <div className="container mx-auto relative z-10">
-        <h2 className={`text-3xl font-bold mb-24 text-center ${themeColors[theme].textPrimary}`}>Project Overview</h2>
+        <h2 className={`text-3xl font-bold mb-24 text-center ${themeColors[theme].textPrimary}`}>{t("projectOverviewTitle")}</h2>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -30,14 +51,11 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
               animate={floatingAnimation}
               className={`absolute -top-8 -left-8 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50`}
             ></motion.div>
-            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><CheckCircle className="mr-2" /> Project Objectives</h3>
+            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><CheckCircle className="mr-2" /> {t("projectObjectives")}</h3>
             <ul className="list-disc list-inside space-y-2">
-              <li>Enhance accessibility through voice-first technology</li>
-              <li>Implement offline-first, community-led solutions</li>
-              <li>Train AI models for language preservation</li>
-              <li>Develop robust project management tools</li>
-              <li>Support sustainable territory defense and cultural preservation</li>
-              <li>Integrate with WhatsApp for easy access and communication</li>
+              {objectives.map((objective, index) => (
+                <li key={index}>{objective}</li>
+              ))}
             </ul>
           </motion.div>
           <motion.div
@@ -50,14 +68,11 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
               animate={floatingAnimation}
               className={`absolute -top-12 -right-2 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50`}
             ></motion.div>
-            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><Target className="mr-2" /> Expected Outcomes</h3>
+            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><Target className="mr-2" /> {t("expectedOutcomes")}</h3>
             <ul className="list-disc list-inside space-y-2">
-              <li>Empowered Indigenous communities</li>
-              <li>Language and cultural preservation</li>
-              <li>Increased accessibility to technology</li>
-              <li>Data sovereignty for communities</li>
-              <li>Effective project management capabilities</li>
-              <li>Simplified communication through WhatsApp integration</li>
+              {outcomes.map((outcome, index) => (
+                <li key={index}>{outcome}</li>
+              ))}
             </ul>
           </motion.div>
         </div>

@@ -1,17 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Leaf, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FeaturesSection = ({ theme, themeColors }) => {
+  const { t } = useTranslation();
+
   return (
     <section id="features" className={`py-32 ${themeColors[theme].background} relative`}>
       <div className="container mx-auto">
-        <h2 className={`text-3xl font-bold mb-12 text-center ${themeColors[theme].textPrimary}`}>Key Features</h2>
+        <h2 className={`text-3xl font-bold mb-12 text-center ${themeColors[theme].textPrimary}`}>{t("featuresTitle")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
           {[
-            { icon: <Globe className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Mapeo Integration", description: "Seamlessly create and manage geo-observations through WhatsApp" },
-            { icon: <Leaf className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Terrastories Connection", description: "Share and preserve your community's stories with ease" },
-            { icon: <Shield className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Earth Defenders Toolkit", description: "Access a wealth of resources and tools for environmental protection" }
+            { icon: <Globe className={`${themeColors[theme].icon} mb-4`} size={48} />, title: t("mapeoIntegration"), description: t("mapeoIntegrationDesc") },
+            { icon: <Leaf className={`${themeColors[theme].icon} mb-4`} size={48} />, title: t("terrastoriesConnection"), description: t("terrastoriesConnectionDesc") },
+            { icon: <Shield className={`${themeColors[theme].icon} mb-4`} size={48} />, title: t("earthDefendersToolkit"), description: t("earthDefendersToolkitDesc") }
           ].map((feature, index) => (
             <motion.div
               key={index}

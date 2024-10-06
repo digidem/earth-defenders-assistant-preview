@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ContactForm = ({ theme }) => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -49,7 +51,7 @@ const ContactForm = ({ theme }) => {
             transition={{ duration: 0.5 }}
         >
             <div>
-                <label htmlFor="name" className="block text-sm font-medium">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium">{t('name')}</label>
                 <motion.input
                     whileFocus={{ scale: 1.02 }}
                     type="text"
@@ -62,7 +64,7 @@ const ContactForm = ({ theme }) => {
                 />
             </div>
             <div>
-                <label htmlFor="email" className="block text-sm font-medium">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium">{t('email')}</label>
                 <motion.input
                     whileFocus={{ scale: 1.02 }}
                     type="email"
@@ -75,7 +77,7 @@ const ContactForm = ({ theme }) => {
                 />
             </div>
             <div>
-                <label htmlFor="message" className="block text-sm font-medium">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium">{t('message')}</label>
                 <motion.textarea
                     whileFocus={{ scale: 1.02 }}
                     id="message"
@@ -93,7 +95,7 @@ const ContactForm = ({ theme }) => {
                 type="submit"
                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-400 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
-                Send
+                {t('send')}
             </motion.button>
         </motion.form>
     );
