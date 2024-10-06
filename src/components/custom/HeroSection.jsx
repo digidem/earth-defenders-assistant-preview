@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LoaderTwo as AnimatedLogo } from '@/components/custom/animated-map';
-import WhatsAppButton from '@/components/custom/whatsapp-button';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-scroll';
 
 const HeroSection = ({ theme, themeColors }) => {
   return (
@@ -36,7 +37,11 @@ const HeroSection = ({ theme, themeColors }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <WhatsAppButton text="Start Chatting Now" theme={theme} />
+          <Link to="about" smooth={true} duration={500}>
+            <Button variant="secondary" size="lg">
+              Listen to Podcast
+            </Button>
+          </Link>
         </motion.div>
       </div>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Shield, Globe, Leaf, AlertTriangle, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/custom/Header';
 import HeroSection from '@/components/custom/HeroSection';
+import AboutSection from '@/components/custom/AboutSection';
 import HowItWorksSection from '@/components/custom/HowItWorksSection';
-import FeaturesSection from '@/components/custom/FeaturesSection';
 import ProsAndConsSection from '@/components/custom/ProsAndConsSection';
 import CallToAction from '@/components/custom/CallToAction';
 import ContactSection from '@/components/custom/ContactSection';
@@ -73,7 +72,7 @@ const Index = () => {
       >
         <Header theme={theme} themeColors={themeColors} changeLanguage={changeLanguage} languages={languages} />
         <HeroSection theme={theme} themeColors={themeColors} />
-        <FeaturesSection theme={theme} themeColors={themeColors} />
+        <AboutSection theme={theme} themeColors={themeColors} />
         <HowItWorksSection theme={theme} themeColors={themeColors} />
         <ProsAndConsSection theme={theme} themeColors={themeColors} />
         <CallToAction theme={theme} themeColors={themeColors} />
