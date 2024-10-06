@@ -6,8 +6,11 @@ const Header = ({ theme, themeColors, changeLanguage, languages }) => {
 
   return (
     <header className={`${themeColors[theme].primary} py-4 transition-colors duration-500`}>
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold text-white">Earth Defenders Assistant</div>
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div className="text-center md:text-left mb-4 md:mb-0">
+          <h1 className="text-2xl font-bold text-white">Earth Defenders Assistant</h1>
+          <p className="text-sm text-white opacity-80">Voice-Enabled AI for Indigenous Empowerment</p>
+        </div>
         <nav>
           <select
             onChange={(e) => changeLanguage(e.target.value)}

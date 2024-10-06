@@ -9,23 +9,7 @@ const Footer = ({ theme, themeColors }) => {
                     <a href="https://awana.digital" className="hover:text-green-300">Awana Digital</a>
                 </div>
                 <div className="relative mt-4">
-                    <p className="relative py-4 z-10">&copy; {new Date().getFullYear()} Earth Defender Assistant</p>
-                </div>
-                <div className="mt-4 space-y-2 md:space-x-2 flex flex-col md:flex-row justify-center items-center">
-                    {[
-                        { href: "https://mapeo.app", label: "CoMapeo" },
-                        { href: "https://terrastories.app", label: "Terrastories" },
-                        { href: "https://earthdefenderstoolkit.com", label: "Earth Defenders Toolkit" }
-                    ].map((link, index) => (
-                        <motion.a
-                            key={index}
-                            href={link.href}
-                            className={`${themeColors[theme].button} py-2 px-4 rounded-md md:rounded-full transition-all duration-300`}
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            {link.label}
-                        </motion.a>
-                    ))}
+                    <p className="relative py-4 z-10">&copy; {new Date().getFullYear()} Earth Defenders Assistant</p>
                 </div>
             </div>
         </footer>
