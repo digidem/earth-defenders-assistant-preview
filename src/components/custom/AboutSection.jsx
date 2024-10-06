@@ -12,8 +12,15 @@ const AboutSection = ({ theme, themeColors }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div id="buzzsprout-player-15878386"></div>
-            <script src="https://www.buzzsprout.com/2411530/episodes/15878386-introducing-the-earth-defenders-assistant.js?container_id=buzzsprout-player-15878386&player=small" type="text/javascript" charSet="utf-8"></script>
+            <iframe 
+              src="https://www.buzzsprout.com/2411530/episodes/15878386-introducing-the-earth-defenders-assistant?client_source=small_player&iframe=true" 
+              loading="lazy" 
+              width="100%" 
+              height="200" 
+              frameBorder="0" 
+              scrolling="no" 
+              title='Awana AI Labs, Introducing the Earth Defenders Assistant'
+            ></iframe>
           </motion.div>
         </div>
       </div>
