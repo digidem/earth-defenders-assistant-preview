@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { LoaderTwo as AnimatedLogo } from '@/components/custom/animated-map';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-scroll';
+import { Play } from 'lucide-react';
 
 const HeroSection = ({ theme, themeColors }) => {
   return (
@@ -28,9 +29,9 @@ const HeroSection = ({ theme, themeColors }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="pb-4 text-xl mb-8 text-white"
+          className="pb-4 text-xl mb-8 text-white max-w-3xl mx-auto"
         >
-          Voice-enabled platform integrating Mapeo, Terrastories, and Earth Defenders Toolkit
+          Harnessing offline-first technology to preserve languages, protect territories, and ensure data sovereignty for communities on the front lines of climate justice.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +39,12 @@ const HeroSection = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Link to="about" smooth={true} duration={500}>
-            <Button variant="secondary" size="lg">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className={`${themeColors[theme].button} hover:brightness-110 transition-all duration-300 flex items-center gap-2`}
+            >
+              <Play size={20} />
               Listen to Podcast
             </Button>
           </Link>
