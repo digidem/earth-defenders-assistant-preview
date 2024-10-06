@@ -3,6 +3,18 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Target } from 'lucide-react';
 
 const ProsAndConsSection = ({ theme, themeColors }) => {
+  const floatingAnimation = {
+    y: ['-10px', '10px'],
+    transition: {
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: 'reverse',
+        ease: 'easeInOut',
+      },
+    },
+  };
+
   return (
     <section className={`pt-24 pb-72 ${themeColors[theme].background} relative overflow-hidden`}>
       <div className="container mx-auto relative z-10">
@@ -14,7 +26,10 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
             transition={{ duration: 0.8 }}
             className={`bg-green-100 rounded-lg p-8 shadow-lg relative`}
           >
-            <div className={`absolute -top-8 -left-8 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50 animate-pulse`}></div>
+            <motion.div
+              animate={floatingAnimation}
+              className={`absolute -top-8 -left-8 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50`}
+            ></motion.div>
             <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><CheckCircle className="mr-2" /> Project Objectives</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>Enhance accessibility through voice-first technology</li>
@@ -31,7 +46,10 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
             transition={{ duration: 0.8 }}
             className={`bg-orange-100 rounded-lg p-8 shadow-lg relative`}
           >
-            <div className={`absolute -top-12 -right-2 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50 animate-pulse`}></div>
+            <motion.div
+              animate={floatingAnimation}
+              className={`absolute -top-12 -right-2 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50`}
+            ></motion.div>
             <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><Target className="mr-2" /> Expected Outcomes</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>Empowered Indigenous communities</li>
@@ -47,13 +65,29 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
       <div className="absolute inset-0 flex justify-center items-center">
         <motion.div
           className={`w-96 h-96 ${themeColors[theme].accent} rounded-full opacity-30`}
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 20, ease: "linear" }}
+          animate={{
+            rotate: 360,
+            x: ['-50px', '50px'],
+            y: ['-30px', '30px'],
+          }}
+          transition={{
+            rotate: { repeat: Infinity, duration: 20, ease: "linear" },
+            x: { repeat: Infinity, duration: 5, yoyo: Infinity },
+            y: { repeat: Infinity, duration: 7, yoyo: Infinity },
+          }}
         ></motion.div>
         <motion.div
           className={`w-72 h-72 ${themeColors[theme].primary} rounded-full opacity-30`}
-          animate={{ rotate: -360 }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 20, ease: "linear" }}
+          animate={{
+            rotate: -360,
+            x: ['30px', '-30px'],
+            y: ['50px', '-50px'],
+          }}
+          transition={{
+            rotate: { repeat: Infinity, duration: 20, ease: "linear" },
+            x: { repeat: Infinity, duration: 6, yoyo: Infinity },
+            y: { repeat: Infinity, duration: 8, yoyo: Infinity },
+          }}
         ></motion.div>
       </div>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
