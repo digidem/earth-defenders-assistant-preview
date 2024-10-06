@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Target } from 'lucide-react';
 
 const ProsAndConsSection = ({ theme, themeColors }) => {
   return (
@@ -31,7 +31,7 @@ const ProsAndConsSection = ({ theme, themeColors }) => {
             className={`bg-orange-100 rounded-lg p-8 shadow-lg relative`}
           >
             <div className={`absolute -top-12 -right-2 w-16 h-16 ${themeColors[theme].accent} rounded-full opacity-50 animate-pulse`}></div>
-            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><AlertTriangle className="mr-2" /> Expected Outcomes</h3>
+            <h3 className={`text-xl font-bold mb-4 flex items-center ${themeColors[theme].textPrimary}`}><Target className="mr-2" /> Expected Outcomes</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>Empowered Indigenous communities</li>
               <li>Language and cultural preservation</li>

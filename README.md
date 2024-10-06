@@ -1,8 +1,8 @@
-# Earth Defender Assistant
+# Earth Defenders Assistant
 
 ## Description
 
-Earth Defender Assistant is a platform focused on tools co-designed with front-line indigenous communities. It includes CoMapeo, Terrastories, and the Earth Defenders Toolkit (EDT). The platform provides simple resources for users to explore tools, read stories, and build networks even through WhatsApp. There are obvious concerns about data ownership with Meta.
+Earth Defenders Assistant is a platform focused on tools co-designed with front-line indigenous communities. It includes CoMapeo, Terrastories, and the Earth Defenders Toolkit (EDT). The platform provides simple resources for users to explore tools, read stories, and build networks even through WhatsApp. There are obvious concerns about data ownership with Meta.
 
 ## About the Project
 

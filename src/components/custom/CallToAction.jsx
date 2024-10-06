@@ -20,7 +20,7 @@ const CallToAction = ({ theme, themeColors }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl mb-8"
         >
-          Start using Earth Defender Assistant today!
+          Start using Earth Defenders Assistant today!
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

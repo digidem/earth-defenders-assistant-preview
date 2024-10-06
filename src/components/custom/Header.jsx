@@ -7,7 +7,7 @@ const Header = ({ theme, themeColors, changeLanguage, languages }) => {
   return (
     <header className={`${themeColors[theme].primary} py-4 transition-colors duration-500`}>
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold text-white">Earth Defender Assistant</div>
+        <div className="text-2xl font-bold text-white">Earth Defenders Assistant</div>
         <nav>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
