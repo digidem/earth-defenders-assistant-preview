@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import WhatsAppButton from '@/components/custom/whatsapp-button';
+import { Button } from '@/components/ui/button';
 
 const CallToAction = ({ theme, themeColors }) => {
   return (
@@ -27,7 +27,13 @@ const CallToAction = ({ theme, themeColors }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <WhatsAppButton text="Try Now" theme={theme === 'default' ? 'earthDefenders' : 'default'} />
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => window.open('https://w.app/8A90vk', '_blank')}
+          >
+            Talk to us
+          </Button>
         </motion.div>
       </div>
     </section>

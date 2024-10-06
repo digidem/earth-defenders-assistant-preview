@@ -1,44 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { Mic, Server, Globe, Shield } from 'lucide-react';
 
 const HowItWorksSection = ({ theme, themeColors }) => {
-  const steps = [
-    { step: 1, text: "Join the WhatsApp group" },
-    { step: 2, text: "Send a message to the bot" },
-    { step: 3, text: "Bot processes your request" },
-    { step: 4, text: "Receive information or confirm actions" }
+  const features = [
+    { icon: <Mic className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Voice-First Technology", description: "Natural voice interactions in Indigenous languages" },
+    { icon: <Server className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Offline-First Solutions", description: "Operate without internet using local servers" },
+    { icon: <Globe className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Language Preservation", description: "Train AI models for Indigenous languages" },
+    { icon: <Shield className={`${themeColors[theme].icon} mb-4`} size={48} />, title: "Territory Defense", description: "Secure tools for documenting sensitive information" }
   ];
 
   return (
     <section id="how-it-works" className={`pt-32 pb-64 ${themeColors[theme].accent} relative transition-colors duration-500`} style={{ backgroundImage: theme === 'default' ? 'linear-gradient(to right, rgba(34, 197, 94, 0.65), rgba(22, 163, 74, 0.65)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')' : 'linear-gradient(to right, rgba(122, 126, 86, 0.65), rgba(246, 125, 49, 0.65)), url(\'https://www.transparenttextures.com/patterns/dark-mosaic.png\')', backgroundSize: 'contain' }}>
       <div className="container mx-auto">
         <h2 className={`text-3xl font-bold mb-20 text-center ${themeColors[theme].textDark}`}>How It Works</h2>
-        <div className={`flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 ${themeColors[theme].textDark}`}>
-          {steps.map((step, index) => (
-            <React.Fragment key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="flex flex-col items-center relative"
-              >
-                <div className={`${themeColors[theme].primary} text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mb-4`}>
-                  {step.step}
-                </div>
-                <p className="text-center max-w-[150px]">{step.text}</p>
-              </motion.div>
-              {index < steps.length - 1 && (
-                <motion.div
-                  initial={{ opacity: 0, rotate: 0 }}
-                  animate={{ opacity: 1, rotate: 360 }}
-                  transition={{ duration: 2, delay: index * 0.2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-                  className="hidden md:block mx-4"
-                >
-                  <ArrowRight className={`${themeColors[theme].textPrimary} w-8 h-8`} />
-                </motion.div>
-              )}
-            </React.Fragment>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className={`flex flex-col items-center p-6 rounded-lg ${themeColors[theme].card}`}
+            >
+              {feature.icon}
+              <h3 className={`text-xl font-bold mb-2 ${themeColors[theme].textPrimary}`}>{feature.title}</h3>
+              <p className={`text-center ${themeColors[theme].text}`}>{feature.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>
